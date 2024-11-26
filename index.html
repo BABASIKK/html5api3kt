@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мультимедиа и Графика</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="media-section">
+    <h2>Аудио и Видео</h2>
+
+    <div id="audio-player">
+      <audio id="audio" src="AVG.mp3"></audio>
+      <button onclick="playAudio()">Воспроизвести</button>
+      <button onclick="pauseAudio()">Пауза</button>
+      <input type="range" id="audio-volume" min="0" max="1" step="0.1" value="0.5" onchange="setAudioVolume()">
+    </div>
+
+    <div id="video-player">
+      <video id="video" width="400" controls>
+        <source src="AVG.mp4" type="video/mp4">
+      </video>
+      <button onclick="playVideo()">Воспроизвести</button>
+      <button onclick="pauseVideo()">Пауза</button>
+      <input type="range" id="video-volume" min="0" max="1" step="0.1" value="0.5" onchange="setVideoVolume()">
+    </div>
+  </section>
+
+  <section id="canvas-section">
+    <h2>Графика и Анимация</h2>
+    <canvas id="canvas" width="500" height="300"></canvas>
+    <button onclick="startAnimation()">Начать анимацию</button>
+    <button onclick="stopAnimation()">Остановить анимацию</button>
+  </section>
+
+  <section id="image-section">
+    <h2>Загрузка и Обработка Изображений</h2>
+    <input type="file" id="image-loader" accept="image/*" onchange="loadImage(event)">
+    <canvas id="image-canvas" width="500" height="300"></canvas>
+    <button onclick="applyFilter('grayscale')">Ч/Б фильтр</button>
+    <button onclick="downloadImage()">Скачать изображение</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
